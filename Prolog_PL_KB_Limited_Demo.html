@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<section>
+			<h1>
+				Prolog demo using Limited Programming Languages Knowledge Base
+			</h1>
+			<p class="code">
+┌[zeno@z-arch] [2019-09-06 13:05]
+└[~/Documents/Oswego/2019_Fall/csc366/hw2]> swipl
+Welcome to SWI-Prolog (threaded, 64 bits, version 8.0.3)
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software.
+Please run ?- license. for legal details.
+
+For online help and background, visit http://www.swi-prolog.org
+For built-in help, use ?- help(Topic). or ?- apropos(Word).
+
+?- consult('proglang.pro').
+true.
+
+?- language(pascal).
+false.
+
+?- language(prolog).
+true.
+
+?- language(X).
+X = smalltalk .
+
+?- language(L).
+L = smalltalk ;
+L = lisp ;
+L = prolog.
+
+?- language(Language),write(Language),nl,fail.
+smalltalk
+lisp
+prolog
+false.
+
+?- essence(lisp,DT,CF).
+DT = lists,
+CF = 'recursive functions'.
+
+?- essence(prolog,DT,_).
+DT = relations.
+
+?- essence(prolog,_,CF).
+CF = 'logical inferencing'.
+
+?- essence(L,objects,_).
+L = smalltalk.
+
+?- history(lisp,I,_).
+I = inventor('John McCarthy').
+
+?- history(lisp,inventor(Name),_).
+Name = 'John McCarthy'.
+
+?- history(_,inventor(N),_),write(N),nl,fail.
+Alan Kay
+John McCarthy
+Alan Colmeraur
+false.
+
+?- halt.
+			</p>
+		</section>
+	</body>
+</html>

@@ -1,0 +1,61 @@
+┌[zeno@z-arch] [2019-09-06 13:15]
+└[~/Documents/Oswego/2019_Fall/csc366/hw2]> swipl
+Welcome to SWI-Prolog (threaded, 64 bits, version 8.0.3)
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software.
+Please run ?- license. for legal details.
+
+For online help and background, visit http://www.swi-prolog.org
+For built-in help, use ?- help(Topic). or ?- apropos(Word).
+
+?- consult('proglang2.pro').
+true.
+
+?- language(snobol).
+true.
+
+?- language(snowball).
+false.
+
+?- essence(snobol,DT,_).
+DT = pattern.
+
+?- essence(_,array,_).
+false.
+
+?- language(L).
+L = smalltalk ;
+L = lisp ;
+L = prolog ;
+L = snobol ;
+L = apl.
+
+?- language(L),write(L),nl,fail.
+smalltalk
+lisp
+prolog
+snobol
+apl
+false.
+
+?- history(apl,inventor(N),_).
+N = 'Kenneth Iverson'.
+
+?- history(_,inventor(N),_).
+N = 'Alan Kay' ;
+N = 'John McCarthy' ;
+N = 'Alan Colmeraur' ;
+N = 'Ralph Griswold' ;
+N = 'Kenneth Iverson'.
+
+?- history(_,inventor(N),_),write(N),nl,fail.
+Alan Kay
+John McCarthy
+Alan Colmeraur
+Ralph Griswold
+Kenneth Iverson
+false.
+
+?- history(_,_,date(1959)),essence(_,lists,_).
+true.
+
+?- halt.

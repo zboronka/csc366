@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<section>
+			<h1>
+				Dinnerware Knowledge Base
+			</h1>
+			<p class="code">
+┌[zboronka@pi] [2019-09-17 15:53]
+└[~/public_html/csc366/dinnerware]> swipl
+Welcome to SWI-Prolog (threaded, 64 bits, version 7.6.4)
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software.
+Please run ?- license. for legal details.
+
+For online help and background, visit http://www.swi-prolog.org
+For built-in help, use ?- help(Topic). or ?- apropos(Word).
+
+<b>Load the knowledge base</b>
+?- consult('dinnerware.pl').
+true.
+
+<b>List facts pertaining to cutlery</b>
+?- listing(cutlery).
+cutlery :-
+cutlery(A, _),
+write(A),
+nl,
+fail.
+cutlery.
+
+cutlery(knife, soup(no)).
+cutlery(fork, soup(no)).
+cutlery(spoon, soup(yes)).
+cutlery(chopsticks, soup(yes)).
+
+true.
+
+<b>What objects are cutlery?</b>
+?- cutlery.
+knife
+fork
+spoon
+chopsticks
+true.
+
+<b>List facts pertaining to dishes</b>
+?- listing(dishes).
+dishes :-
+dish(A, _),
+write(A),
+nl,
+fail.
+dishes.
+
+true.
+
+<b>What objects are dishes?</b>
+?- dishes.
+plate
+bowl
+cup
+saucecup
+true.
+
+<b>Show the dinnerware rule</b>
+?- listing(dinnerware).
+dinnerware :-
+cutlery,
+dishes.
+
+true.
+
+<b>What are the cutlery and dishes?</b>
+?- dinnerware.
+knife
+fork
+spoon
+chopsticks
+plate
+bowl
+cup
+saucecup
+true.
+
+<b>What dinnerware can be used to eat soup?</b>
+?- soupable(Dinnerware).
+Dinnerware = spoon ;
+Dinnerware = chopsticks ;
+Dinnerware = bowl ;
+Dinnerware = cup ;
+false.
+
+<b>Which dinnerware can be paired together to eat soup with?</b>
+?- pair(C,D),write(C),write(" "),write(D),nl,fail.
+spoon bowl
+spoon cup
+chopsticks bowl
+chopsticks cup
+false.
+
+<b>Which dinnerware can't you pair together in order to eat soup?</b>
+?- nsfs(C,D),write("You can't eat soup with a "),write(C),write(" and a "),write(D),nl,fail.
+You can't eat soup with a knife and a plate
+You can't eat soup with a knife and a saucecup
+You can't eat soup with a fork and a plate
+You can't eat soup with a fork and a saucecup
+false.
+
+<b>What is the correct way to exit a text based program?</b>
+?- exit.
+┌[zboronka@pi] [2019-09-17 15:59]
+└[~/public_html/csc366/dinnerware]>
+			</p>
+		</section>
+	</body>
+</html>

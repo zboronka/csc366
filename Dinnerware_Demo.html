@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<section>
+			<h1>
+				Dinnerware Knowledge Base
+			</h1>
+			<p class="code">
+┌[zboronka@pi] [2019-09-17 15:53]
+└[~/public_html/csc366/dinnerware]> swipl
+Welcome to SWI-Prolog (threaded, 64 bits, version 7.6.4)
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software.
+Please run ?- license. for legal details.
+
+For online help and background, visit http://www.swi-prolog.org
+For built-in help, use ?- help(Topic). or ?- apropos(Word).
+
+?- consult('dinnerware.pl').
+true.
+
+?- listing(cutlery).
+cutlery :-
+cutlery(A, _),
+write(A),
+nl,
+fail.
+cutlery.
+
+cutlery(knife, soup(no)).
+cutlery(fork, soup(no)).
+cutlery(spoon, soup(yes)).
+cutlery(chopsticks, soup(yes)).
+
+true.
+
+?- cutlery.
+knife
+fork
+spoon
+chopsticks
+true.
+
+?- listing(dishes).
+dishes :-
+dish(A, _),
+write(A),
+nl,
+fail.
+dishes.
+
+true.
+
+?- dishes.
+plate
+bowl
+cup
+saucecup
+true.
+
+?- listing(dinnerware).
+dinnerware :-
+cutlery,
+dishes.
+
+true.
+
+?- dinnerware.
+knife
+fork
+spoon
+chopsticks
+plate
+bowl
+cup
+saucecup
+true.
+
+?- soupable(Dinnerware).
+Dinnerware = spoon ;
+Dinnerware = chopsticks ;
+Dinnerware = bowl ;
+Dinnerware = cup ;
+false.
+
+?- pair(C,D),write(C),write(" "),write(D),nl,fail.
+spoon bowl
+spoon cup
+chopsticks bowl
+chopsticks cup
+false.
+
+?- nsfs(C,D),write("You can't eat soup with a "),write(C),write(" and a "),write(D),nl,fail.
+You can't eat soup with a knife and a plate
+You can't eat soup with a knife and a saucecup
+You can't eat soup with a fork and a plate
+You can't eat soup with a fork and a saucecup
+false.
+
+?- exit.
+┌[zboronka@pi] [2019-09-17 15:59]
+└[~/public_html/csc366/dinnerware]>
+			</p>
+		</section>
+	</body>
+</html>
