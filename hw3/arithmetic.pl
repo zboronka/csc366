@@ -1,0 +1,34 @@
+% Implementation of nondestructive arithmetic
+
+:- consult(gv).
+
+add(X, Y, S) :-
+	value_of(X, XVal), value_of(Y, YVal),
+	declare(S, XVal),
+	add(S, YVal).
+
+sub(X, Y, D) :-
+	value_of(X, XVal), value_of(Y, YVal),
+	declare(D, XVal),
+	sub(D, YVal).
+
+mul(X, Y, P) :-
+	value_of(X, XVal), value_of(Y, YVal),
+	Product is XVal * YVal,
+	declare(P, Product).
+
+div(X, Y, Q) :-
+	value_of(X, XVal), value_of(Y, YVal),
+	Quotient is XVal / YVal,
+	declare(Q, Quotient).
+
+exp(X, Y, P) :-
+	value_of(X, XVal), value_of(Y, YVal),
+	exponential(XVal, YVal, Product),
+	declare(P, Product).
+	
+exponential(_, 0, 1) :- !.
+exponential(X, Y, P) :-
+	YM1 is Y - 1,
+	exponential(X, YM1, Partial),
+	P is X * Partial.
