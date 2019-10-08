@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../style.css">
+	</head>
+	<body>
+		<header>
+			Random Crypto Problem Solutions
+		</header>
+		<section>
+			<h1>Abstract</h1>
+			<p>
+				This page details the solutions to ten random cryto problems and my thoughts on the most salient aspect of the solutions.
+			</p>
+		</section>
+		<section>
+			<h1>Problem/Solution/MSAs</h1>
+			<ol>
+				<li>numbers = {2,5,9,2,5} and goal = 6</li>
+				<div class="monospace">((9/(5-2))+(5-2))</div>
+				<div>3 was used twice in this solution, both being made in the same way by (5-2)</div>
+
+				<li>numbers = {0,2,2,9,4} and goal = 0</li>
+				<div class="monospace">(0*(((2+2)+9)+4))</div>
+				<div>This solution was trivial because 0 can always be used to make 0 via multiplication</div>
+
+				<li>numbers = {9,1,5,3,4} and goal = 8</li>
+				<div class="monospace">((5-9)+(4*3)*1)</div>
+				<div>This solution utilizes a negative number</div>
+
+				<li>numbers = {9,2,4,0,6} and goal = 8</li>
+				<div class="monospace">((2*4)+(((9*6)*4)*0))</div>
+				<div>Getting 8 could be done with just one operation (2*4) and having a zero made it possible to zero out the rest of the inputs with multiplication</div>
+
+				<li>numbers = {3,5,2,7,2} and goal = 4</li>
+				<div class="monospace">(((7-5)+2)*(3-2))</div>
+				<div>This problem is basically 2+2</div>
+
+				<li>numbers = {4,6,3,6,4} and goal = 5</li>
+				<div class="monospace">(3+((4/4)+(6/6)))</div>
+				<div>One is made twice here</div>
+
+				<li>numbers = {5,6,3,6,0} and goal = 4</li>
+				<div class="monospace">((6-3)+((6-5)+0))</div>
+				<div>Subtraction is utilized twice here</div>
+
+				<li>numbers = {1,4,5,7,0} and goal = 4</li>
+				<div class="monospace">((1*4)+(5*(7*0)))</div>
+				<div>This solution follows the order of the numbers in problem</div>
+
+				<li>numbers = {4,6,7,8,4} and goal = 3</li>
+				<div class="monospace">(6/((4/4)+(8-7)))</div>
+				<div>This solution uses 2 divisions and a subtraction operation</div>
+
+				<li>numbers = {9,8,9,9,2} and goal = 2</li>
+				<div class="monospace">((9-((8*9)/9))*2)</div>
+				<div>This solution again follows the order of the numbers in the problem</div>
+			</ol>
+		</section>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../style.css">
+	</head>
+	<body>
+		<section>
+			<h1>
+				Crypto Random Problem Generation Demo
+			</h1>
+			<p class="code">
+Welcome to SWI-Prolog (threaded, 64 bits, version 8.0.3)
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software.
+Please run ?- license. for legal details.
+
+For online help and background, visit http://www.swi-prolog.org
+For built-in help, use ?- help(Topic). or ?- apropos(Word).
+
+?- consult(crypto_rpg).
+true.
+
+?- display_problems(10).
+numbers = {2,5,9,2,5} and goal = 6
+numbers = {0,2,2,9,4} and goal = 0
+numbers = {9,1,5,3,4} and goal = 8
+numbers = {9,2,4,0,6} and goal = 8
+numbers = {3,5,2,7,2} and goal = 4
+numbers = {4,6,3,6,4} and goal = 5
+numbers = {5,6,3,6,0} and goal = 4
+numbers = {1,4,5,7,0} and goal = 4
+numbers = {4,6,7,8,4} and goal = 3
+numbers = {9,8,9,9,2} and goal = 2
+true.
+
+?- exit.
+			</p>
+		</section>
+	</body>
+</html>
