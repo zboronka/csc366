@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../style.css">
+	</head>
+	<body>
+		<section>
+			<h1>
+				Global Variable Manual Page
+			</h1>
+			<div>This manual describes features contained within the GV prolog knoledge base, and how to use them.</div>
+		</section>
+		<section>
+			<h2><p class="code">
+declare(Variable, Value)</p></h2>
+			<div>Binds a value to a variable globally when called</div>
+			<div>Arguments:</div>
+			<ul>
+				<li>Variable - atomic name of variable</li>
+				<li>Value - value to be bound</li>
+			</ul>
+			<div>Example - Bind 5 to a variable with label "a":</div>
+			<p class="code">
+?- declare(a, 5).
+true.
+			</p>
+			<h2><p class="code">
+display_bindings</p></h2>
+			<div>Displays all current bindings</div>
+			<div>Example - declare variables "a" and "b" and display:</div>
+			<p class="code">
+?- declare(a, 5).
+true.
+
+?- declare(b, 7).
+true.
+
+?- display_bindings.
+a -> 5
+b -> 7
+true.
+			</p>
+			<h2><p class="code">
+value_of(Variable, Value)</p></h2>
+			<div>Gets a value from a global variable</div>
+			<div>Arguments:</div>
+			<ul>
+				<li>Variable - atomic name of variable</li>
+				<li>Value - value bound to variable</li>
+			</ul>
+			<div>Example - Get value of variable "a":</div>
+			<p class="code">
+?- declare(a, 5).
+true.
+
+?- value_of(a, Value).
+Value = 5.
+			</p>
+		</section>
+	</body>
+</html>

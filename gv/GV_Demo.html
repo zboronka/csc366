@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../style.css">
+	</head>
+	<body>
+		<section>
+			<h1>
+				Global Variables Demo
+			</h1>
+			<p class="code">
+Welcome to SWI-Prolog (threaded, 64 bits, version 8.0.3)
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software.
+Please run ?- license. for legal details.
+
+For online help and background, visit http://www.swi-prolog.org
+For built-in help, use ?- help(Topic). or ?- apropos(Word).
+
+?- consult('gv.pl').
+true.
+
+?- declare(x, 1).
+true.
+
+?- declare(y, 5).
+true.
+
+?- value_of(x, Value).
+Value = 1.
+
+?- bind(x, 3).
+true.
+
+?- display_bindings.
+y -> 5
+x -> 3
+true.
+
+?- inc(x).
+true.
+
+?- dec(y).
+true.
+
+?- display_bindings.
+x -> 4
+y -> 4
+true.
+
+?- add(x, Y), value_of(y, Y).
+ERROR: Arguments are not sufficiently instantiated
+ERROR: In:
+ERROR:   [10] _8340 is 4+_8348
+ERROR:    [9] add(x,_8374) at /home/zeno/Documents/Oswego/2019_Fall/csc366/csc366/hw3/gv.pl:36
+ERROR:    [8] '<meta-call>'(user:(...,...)) <foreign>
+ERROR:    [7] <user>
+?- value_of(y, Y), add(x, Y).
+Y = 4.
+
+?- sub(y, 4).
+true.
+
+?- display_bindings.
+x -> 8
+y -> 0
+true.
+
+?- exit.
+			</p>
+		</section>
+	</body>
+</html>

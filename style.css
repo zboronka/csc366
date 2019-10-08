@@ -17,7 +17,7 @@ header, section {
 	padding: 10px;
 }
 
-object, h1, p, ol {
+object, div, h1, p, ol, ul {
 	width: 90%;
 	margin: auto;
 }
@@ -43,6 +43,10 @@ p {
 h1 {
 	font-size: 18px;
 	color: greenyellow;
+}
+
+ul {
+	width: 85%;
 }
 
 li {

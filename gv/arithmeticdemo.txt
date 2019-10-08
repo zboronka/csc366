@@ -1,0 +1,67 @@
+Welcome to SWI-Prolog (threaded, 64 bits, version 8.0.3)
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software.
+Please run ?- license. for legal details.
+
+For online help and background, visit http://www.swi-prolog.org
+For built-in help, use ?- help(Topic). or ?- apropos(Word).
+
+?- consult(arithmetic).
+true.
+
+?- declare(x, 2).
+true.
+
+?- declare(y, 8).
+true.
+
+?- display_bindings.
+x -> 2
+y -> 8
+true.
+
+?- add(x, y, sum).
+true.
+
+?- sub(x, y, diff).
+true.
+
+?- mul(x, y, prod).
+true.
+
+?- div(y, x, quot).
+true.
+
+?- exp(x, y, expo).
+true.
+
+?- add(x, sum, xpsum).
+true.
+
+?- sub(y, sum, ymxpy).
+true.
+
+?- mul(x, x, xsquare).
+true.
+
+?- div(x, x, one).
+true.
+
+?- exp(expo, x, twoto16).
+true.
+
+?- display_bindings.
+x -> 2
+y -> 8
+sum -> 10
+diff -> -6
+prod -> 16
+quot -> 4
+expo -> 256
+xpsum -> 12
+ymxpy -> -2
+xsquare -> 4
+one -> 1
+twoto16 -> 65536
+true.
+
+?- exit.
