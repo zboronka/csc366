@@ -57,6 +57,134 @@ true.
 ?- value_of(a, Value).
 Value = 5.
 			</p>
+			<h2><p class="code">
+bind(Variable, Value)</p></h2>
+			<div>Rebinds a value to a global variable</div>
+			<div>Arguments:</div>
+			<ul>
+				<li>Variable - atomic name of pre-existing variable</li>
+				<li>Value - value bound to variable</li>
+			</ul>
+			<div>Example - Rebind 7 to variable "a" :</div>
+			<p class="code">
+?- declare(a, 5).
+true.
+
+?- bind(a, 7).
+true.
+			</p>
+			<h2><p class="code">
+undeclare(Variable)</p></h2>
+			<div>Deletes a global variable</div>
+			<div>Arguments:</div>
+			<ul>
+				<li>Variable - atomic name of pre-existing variable</li>
+			</ul>
+			<div>Example - delete variable "a" :</div>
+			<p class="code">
+?- declare(a, 5).
+true.
+
+?- undeclare(a).
+true.
+
+?- display_bindings.
+true.
+			</p>
+			<h2><p class="code">
+inc(Variable)</p></h2>
+			<div>Increments a global variable</div>
+			<div>Arguments:</div>
+			<ul>
+				<li>Variable - atomic name of pre-existing variable</li>
+			</ul>
+			<div>Example - increment variable "a" :</div>
+			<p class="code">
+?- declare(a, 5).
+true.
+
+?- display_bindings.
+a -> 5
+true.
+
+?- inc(a).
+true.
+
+?- display_bindings.
+a -> 6
+true.
+			</p>
+			<h2><p class="code">
+dec(Variable)</p></h2>
+			<div>Decrements a global variable</div>
+			<div>Arguments:</div>
+			<ul>
+				<li>Variable - atomic name of pre-existing variable</li>
+			</ul>
+			<div>Example - decrement variable "a" :</div>
+			<p class="code">
+?- declare(a, 5).
+true.
+
+?- display_bindings.
+a -> 5
+true.
+
+?- dec(a).
+true.
+
+?- display_bindings.
+a -> 4
+true.
+			</p>
+			<h2><p class="code">
+add(Variable, Value)</p></h2>
+			<div>Adds to a global variable</div>
+			<div>Arguments:</div>
+			<ul>
+				<li>Variable - atomic name of pre-existing variable</li>
+				<li>Value - value to add</li>
+			</ul>
+			<div>Example - add 3 to variable "a" :</div>
+			<p class="code">
+?- declare(a, 5).
+true.
+
+?- display_bindings.
+a -> 5
+true.
+
+?- add(a,3).
+true.
+
+?- display_bindings.
+a -> 8
+true.
+			</p>
+			<h2><p class="code">
+sub(Variable, Value)</p></h2>
+			<div>Subtracts from a global variable</div>
+			<div>Arguments:</div>
+			<ul>
+				<li>Variable - atomic name of pre-existing variable</li>
+				<li>Value - value to subtract</li>
+			</ul>
+			<div>Example - subtract 3 from variable "a" :</div>
+			<p class="code">
+?- declare(a, 5).
+true.
+
+?- display_bindings.
+a -> 5
+true.
+
+?- sub(a,3).
+true.
+
+?- display_bindings.
+a -> 2
+true.
+			</p>
 		</section>
 	</body>
 </html>
