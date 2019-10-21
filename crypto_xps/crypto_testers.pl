@@ -76,3 +76,30 @@ solve4(N1,N2,N3,N4,G) :-
 solve4(_,_,_,_,_) :-
 	write('no solution'),nl.
 
+test5(0).
+test5(N) :-
+	demo5,
+	NM1 is N-1,
+	test5(NM1).
+
+demo5 :-
+	generate5(N1,N2,N3,N4,N5,G),
+	display5(N1,N2,N3,N4,N5,G),
+	solve5(N1,N2,N3,N4,N5,G).
+
+generate5(N1,N2,N3,N4,N5,G) :-
+	random(0,6,N1),
+	random(0,6,N2),
+	random(0,6,N3),
+	random(0,6,N4),
+	random(0,6,N5),
+	random(0,6,G).
+
+display5(N1,N2,N3,N4,N5,G) :-
+	write(problem(numbers(N1,N2,N3,N4,N5),goal(G))), write(' --> ').
+
+solve5(N1,N2,N3,N4,N5,G) :-
+	crypto(N1,N2,N3,N4,N5,G,X),
+	write(X),nl.
+solve5(_,_,_,_,_,_) :-
+	write('no solution'),nl.

@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../style.css">
+	</head>
+	<body>
+		<section>
+			<h1>
+				Combinatorial Sets Demo
+			</h1>
+			<p class="code">
+Welcome to SWI-Prolog (threaded, 64 bits, version 8.0.3)
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software.
+Please run ?- license. for legal details.
+
+For online help and background, visit http://www.swi-prolog.org
+For built-in help, use ?- help(Topic). or ?- apropos(Word).
+
+?- consult(combinatorial_sets).
+true.
+
+?- permutations(foo,bar).
+foobar barfoo
+true.
+
+?- permutations(foo,bar,baz).
+foobarbaz foobazbar barfoobaz barbazfoo bazfoobar bazbarfoo
+true.
+
+?- permutations(foo,bar,baz, ほげ).
+foobarbazほげ foobarほげbaz foobazbarほげ foobazほげbar fooほげbarbaz fooほげbazbar barfoobazほげ barfooほげbaz barbazfooほげ barbazほげfoo barほげfoobaz barほげbazfoo bazfoobarほげ bazfooほげbar bazbarfooほげ bazbarほげfoo bazほげfoobar bazほげbarfoo foobarbazほげ foobarほげbaz foobazbarほげ foobazほげbar fooほげbarbaz fooほげbazbar
+true.
+
+?- combinations(ほげ, ぴよ, ふが).
+ほげぴよ ほげふが ぴよふが
+true.
+
+?- combinations(ほげ, ぴよ, ふが, ほげら, ほげほげ).
+ほげぴよ ほげふが ほげほげら ほげほげほげ ぴよふが ぴよほげら ぴよほげほげ ふがほげら ふがほげほげ ほげらほげほげ
+true.
+
+?- halt.
+			</p>
+		</section>
+	</body>
+</html>
