@@ -10,37 +10,88 @@
 				Crypto Exhaustive Problem Solver Advanced Demo
 			</h1>
 			<p class="code">
-:- consult('../combinatorial_sets/combinatorial_sets').
-:- consult(crypto_testers).
+Welcome to SWI-Prolog (threaded, 64 bits, version 8.0.3)
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software.
+Please run ?- license. for legal details.
 
-crypto(N1,N2,Goal,ex(N1,+,N2)) :- Goal is ( N1 + N2 ).
-crypto(N1,N2,Goal,ex(N1,*,N2)) :- Goal is ( N1 * N2 ).
-crypto(N1,N2,Goal,ex(N1,-,N2)) :- Goal is ( N1 - N2 ).
-crypto(N1,N2,Goal,ex(N2,-,N1)) :- Goal is ( N2 - N1 ).
-crypto(N1,N2,Goal,ex(N1,/,N2)) :- nonzero(N2), Goal is ( N1 / N2 ).
-crypto(N1,N2,Goal,ex(N2,/,N1)) :- nonzero(N1), Goal is ( N2 / N1 ).
+For online help and background, visit http://www.swi-prolog.org
+For built-in help, use ?- help(Topic). or ?- apropos(Word).
 
-nonzero(N) :- N > 0.
-nonzero(N) :- N < 0.
+?- consult(crypto).
+true.
 
-crypto(N1,N2,N3,G,Expr) :-
-	comb(set(N1,N2,N3),comb(A,B),extras(C)),
-	crypto(A,B,SG,SGE),
-	crypto(C,SG,G,UGE),
-	substitute(SGE,SG,UGE,Expr).
+?- display_bindings.
+lo -> 0
+hi -> 9
+true.
 
-crypto(N1,N2,N3,N4,G,Expr) :-
-	comb(set(N1,N2,N3,N4),comb(A,B),extras(C,D)),
-	crypto(A,B,SG,SGE),
-	crypto(C,D,SG,G,UGE),
-	substitute(SGE,SG,UGE,Expr).
+?- solve_one.
+numbers = {1,4,0,9,1} and goal = 6
+Solution: ( ( 0 * 9 ) + ( 1 + ( 1 + 4 ) ) )
+true .
 
-substitute(New,Old,ex(Old,O,Z),ex(New,O,Z)).
-substitute(New,Old,ex(X,O,Old),ex(X,O,New)).
-substitute(New,Old,ex(X,O,Z),ex(Y,O,Z)) :-
-	substitute(New,Old,X,Y).
-substitute(New,Old,ex(X,O,Z),ex(X,O,Y)) :-
-	substitute(New,Old,Z,Y).
+?- display_bindings.
+lo -> 0
+hi -> 9
+crypto_problem -> problem(numbers(1,4,0,9,1),goal(6))
+solution -> solution(ex(ex(0,*,9),+,ex(1,+,ex(1,+,4))))
+true.
+
+?- demo(10).
+numbers = {5,3,6,9,5} and goal = 7
+Solution: ( ( 5 * ( 9 - 6 ) ) - ( 5 + 3 ) )
+numbers = {5,2,3,8,8} and goal = 8
+Solution: ( 8 * ( ( 3 + 8 ) - ( 5 * 2 ) ) )
+numbers = {8,5,1,0,6} and goal = 4
+Solution: ( ( 1 + 0 ) + ( 6 - ( 8 - 5 ) ) )
+numbers = {6,5,1,5,5} and goal = 2
+Solution: ( ( 1 - 5 ) - ( 5 - ( 6 + 5 ) ) )
+numbers = {0,7,5,3,2} and goal = 3
+Solution: ( ( 5 + 3 ) + ( 2 - ( 0 + 7 ) ) )
+numbers = {7,6,5,9,0} and goal = 6
+Solution: ( ( 5 + ( 7 - 6 ) ) + ( 9 * 0 ) )
+numbers = {2,2,0,2,6} and goal = 6
+Solution: ( 6 + ( ( 2 + 2 ) * ( 0 * 2 ) ) )
+numbers = {2,2,2,3,8} and goal = 2
+Solution: ( ( 8 + ( 2 + 2 ) ) / ( 2 * 3 ) )
+numbers = {8,5,6,4,0} and goal = 4
+Solution: ( 4 + ( ( 8 + 5 ) * ( 6 * 0 ) ) )
+numbers = {4,3,3,8,4} and goal = 8
+Solution: ( ( 3 + 8 ) + ( 4 - ( 4 + 3 ) ) )
+true .
+
+?- display_bindings.
+lo -> 0
+hi -> 9
+crypto_problem -> problem(numbers(4,3,3,8,4),goal(8))
+solution -> solution(ex(ex(3,+,8),+,ex(4,-,ex(4,+,3))))
+true.
+
+?- solve(problem(numbers(1,2,3,4,5),goal(6))).
+numbers = {1,2,3,4,5} and goal = 6
+Solution: ( ( 1 + 2 ) * ( ( 3 + 4 ) - 5 ) )
+true .
+
+?- display_bindings.
+lo -> 0
+hi -> 9
+crypto_problem -> problem(numbers(1,2,3,4,5),goal(6))
+solution -> solution(ex(ex(1,+,2),*,ex(ex(3,+,4),-,5)))
+true.
+
+?- solve(problem(numbers(0,0,0,0,7),goal(8))).
+numbers = {0,0,0,0,7} and goal = 8
+No solution to this problem.
+true .
+
+?- display_bindings.
+lo -> 0
+hi -> 9
+crypto_problem -> problem(numbers(0,0,0,0,7),goal(8))
+solution -> solution(none)
+true.
+
+?- exit.
 			</p>
 		</section>
 	</body>
