@@ -45,12 +45,13 @@ h1 {
 	color: greenyellow;
 }
 
-ul {
-	width: 85%;
+h2 {
+	font-size: 14px;
+	font-weight: bold;
 }
 
-li {
-	font-weight: bold;
+ul {
+	width: 85%;
 }
 
 object {

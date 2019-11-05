@@ -130,11 +130,60 @@ F = 6 .
 ?- factorial(4,F).
 F = 24 .
 
-?- make_set([1,2],T).
-T = [1, 2].
+?- make_set([1,2,2,4],T).
+T = [1, 2, 4] .
 
-?- make_set([1,2],[3,4]).
-false.
+?- replace(4,foo,[a,b,c,d,e,f],R).
+R = [a, b, c, d, foo, f] .
+
+?- remove(四,[一,五,十,四,七,四],Remove).
+Remove = [一, 五, 十, 七, 四] .
+
+?- take([1,2,3,4,5],E,R).
+E = 4,
+R = [1, 2, 3, 5] .
+
+?- take([1,2,3,4,5],E,R).
+E = 4,
+R = [1, 2, 3, 5] .
+
+?- take([1,2,3,4,5],E,R).
+E = 3,
+R = [1, 2, 4, 5] .
+
+?- split([[one,一],[two,二],[three,三]],E,Ni本語).
+E = [one, two, three],
+Ni本語 = [一, 二, 三].
+
+?- min_pair(2,4,Min).
+Min = 2 .
+
+?- min_pair(4,2,Min).
+Min = 2.
+
+?- max_pair(2,4,Max).
+Max = 4.
+
+?- max_pair(4,2,Max).
+Max = 4 .
+
+?- min([4,3,4,1,5,8],Min).
+Min = 1 .
+
+?- max([4,3,4,1,5,8],Max).
+Max = 8 .
+
+?- sort_inc([8,2,14,5,3],Si).
+Si = [2, 3, 5, 8, 14].
+
+?- sort_dec([8,2,14,5,3],Sd).
+Sd = [14, 8, 5, 3, 2].
+
+?- a_list([いち,に,さん],[一,二,三], Pairs).
+Pairs = [pair(いち, 一), pair(に, 二), pair(さん, 三)] .
+
+?- assoc([pair(いち, 一), pair(に, 二), pair(さん, 三)],に,C).
+C = 二 .
 			</p>
 		</section>
 	</body>

@@ -1,0 +1,557 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../style.css">
+	</head>
+	<body>
+		<section>
+			<h1>
+				LP Manual
+			</h1>
+		</section>
+		<section>
+			<h2>NAME</h2>
+			<div>lp - List processing prolog solutions</div>
+			<h2>SYNOPSIS</h2>
+			<ul>
+				<li><a href="#first" class="code">first(List,H)</a></li>
+				<li><a href="#rest" class="code">rest(List,T)</a></li>
+				<li><a href="#last_element" class="code">last_element(List,Last)</a></li>
+				<li><a href="#write_list" class="code">write_list(List)</a></li>
+				<li><a href="#write_list_reversed" class="code">write_list_reversed(List)</a></li>
+				<li><a href="#size" class="code">size(List,Size)</a></li>
+				<li><a href="#count" class="code">count(Element,List,Count)</a></li>
+				<li><a href="#element_of" class="code">element_of(Element,List)</a></li>
+				<li><a href="#contains" class="code">contains(List,Element)</a></li>
+				<li><a href="#nth" class="code">nth(N,List,Element)</a></li>
+				<li><a href="#pick" class="code">pick(List,Item)</a></li>
+				<li><a href="#sum" class="code">sum(List,Sum)</a></li>
+				<li><a href="#make_list" class="code">make_list(Length,Element,List)</a></li>
+				<li><a href="#iota" class="code">iota(N,IotaN)</a></li>
+				<li><a href="#add_first" class="code">add_first(X,L,List)</a></li>
+				<li><a href="#add_last" class="code">add_last(X,L,List)</a></li>
+				<li><a href="#esrever" class="code">esrever(List,Reverse)</a></li>
+				<li><a href="#join_lists2" class="code">join_lists(List1,List2,Join)</a></li>
+				<li><a href="#join_lists3" class="code">join_lists(List1,List2,List3,Join)</a></li>
+				<li><a href="#join_lists4" class="code">join_lists(List1,List2,List3,List4,Join)</a></li>
+				<li><a href="#product" class="code">product(List,Product)</a></li>
+				<li><a href="#factorial" class="code">factorial(N,Nfactorial)</a></li>
+				<li><a href="#make_set" class="code">make_set(List,Set)</a></li>
+				<li><a href="#replace" class="code">replace(ListPosition,Object,List,Result)</a></li>
+				<li><a href="#remove" class="code">remove(Element,List,Result)</a></li>
+				<li><a href="#take" class="code">take(List,Element,Rest)</a></li>
+				<li><a href="#split" class="code">split(PairList,FirstsList,SecondsList)</a></li>
+				<li><a href="#min_pair" class="code">min_pair(N1,N2,Min)</a></li>
+				<li><a href="#max_pair" class="code">max_pair(N1,N2,Max)</a></li>
+				<li><a href="#min" class="code">min(List,Min)</a></li>
+				<li><a href="#max" class="code">max(List,Max)</a></li>
+				<li><a href="#sort_inc" class="code">sort_inc(List,Result)</a></li>
+				<li><a href="#sort_dec" class="code">sort_dec(List,Result)</a></li>
+				<li><a href="#a_list" class="code">a_list(FirstList,SecondList,AssociationList)</a></li>
+				<li><a href="#assoc" class="code">assoc(AList,Key,Value)</a></li>
+			</ul>
+			<div>
+				LP is a collection of list processing programs. It is written in Prolog and therefore is intended to be used in an Prolog environment of some sort. It contains some alternative list processing programs to those already defined by the Prolog standards, along with a few more complex list processing programs.
+			</div>
+			<h2>DESCRIPTION</h2>
+			<div>
+				<h2 id="first" class="code">first(List,H)</h2>
+				<div>Get the head of a list.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>List - non empty list to process</li>
+					<li>H - Variable that will be bound to the head of the list</li>
+				</ul>
+				<p class="code">
+?- first([1,2,3,4,5], First).
+First = 1.
+				</p>
+			</div>
+			<div>
+				<h2 id="rest" class="code">rest(List,T)</h2>
+				<div>Get the tail of a list.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>List - non empty list to process</li>
+					<li>T - Variable that will be bound to the tail of the list</li>
+				</ul>
+				<p class="code">
+?- rest([1,2,3,4,5], Rest).
+Rest = [2, 3, 4, 5].
+				</p>
+			</div>
+			<div>
+				<h2 id="last_element" class="code">last_element(List,Last)</h2>
+				<div>Get the last element of a list.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>List - non empty list to process</li>
+					<li>Last - Variable that will be bound to the tail of the list</li>
+				</ul>
+				<p class="code">
+?- last_element([1,2,3,4,5], Last).
+Last = 5 .
+				</p>
+			</div>
+			<div>
+				<h2 id="write_list" class="code">write_list(List)</h2>
+				<div>Write the elements of a list with each entry on a new line.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>List - list to write</li>
+				</ul>
+				<p class="code">
+?- write_list([1,2,3,4,5]).
+1
+2
+3
+4
+5
+true.
+				</p>
+			</div>
+			<div>
+				<h2 id="write_list_reversed" class="code">write_list_reversed(List)</h2>
+				<div>Write the elements of a list with each entry on a new line in reverse.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>List - list to write</li>
+				</ul>
+				<p class="code">
+?- write_list_reversed([1,2,3,4,5]).
+5
+4
+3
+2
+1
+true.
+				</p>
+			</div>
+			<div>
+				<h2 id="size" class="code">size(List,Size)</h2>
+				<div>Get the size of a list.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>List - list to process</li>
+					<li>Size - Variable that will be bound to the size of the list</li>
+				</ul>
+				<p class="code">
+?- size([1,2,3,4,5], Size).
+Size = 5.
+				</p>
+			</div>
+			<div>
+				<h2 id="count" class="code">count(Element,List,Count)</h2>
+				<div>Get the count of a given element in a list.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>Element - element to get count of</li>
+					<li>List - list to process</li>
+					<li>Count - Variable that will be bound to the count of elements in list</li>
+				</ul>
+				<p class="code">
+?- size([1,2,3,4,5], Size).
+Size = 5.
+				</p>
+			</div>
+			<div>
+				<h2 id="element_of" class="code">element_of(Element,List)</h2>
+				<div>Return true if element is in the list.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>Element - element to search for</li>
+					<li>List - list to search through</li>
+				</ul>
+				<p class="code">
+?- element_of(3,[1,2,3,4,5]).
+true .
+
+?- element_of(0,[1,2,3,4,5]).
+false.
+				</p>
+			</div>
+			<div>
+				<h2 id="contains" class="code">contains(List,Element)</h2>
+				<div>Return true is a list contains the element.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>List - list to search through</li>
+					<li>Element - element to search for</li>
+				</ul>
+				<p class="code">
+?- contains([1,2,3,4,5],3).
+true .
+
+?- contains([1,2,3,4,5],0).
+false.
+				</p>
+			</div>
+			<div>
+				<h2 id="nth" class="code">nth(N,List,Element)</h2>
+				<div>Return the nth element of a list.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>N - zero-based index of the element to grab</li>
+					<li>List - list to search through</li>
+					<li>Element - Variable that will be bound to the nth element</li>
+				</ul>
+				<p class="code">
+?- nth(1,[1,2,3,4,5],N).
+N = 2 .
+
+?- nth(5,[1,2,3,4,5],N).
+false.
+				</p>
+			</div>
+			<div>
+				<h2 id="pick" class="code">pick(List,Item)</h2>
+				<div>Pick a random item from a list.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>List - list to pick from</li>
+					<li>Item - Variable that will be bound to a random item in the list</li>
+				</ul>
+				<p class="code">
+?- pick([1,2,3,4,5],P).
+P = 1 .
+
+?- pick([1,2,3,4,5],P).
+P = 3 .
+				</p>
+			</div>
+			<div>
+				<h2 id="sum" class="code">sum(List,Sum)</h2>
+				<div>Add all the numbers in a list together.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>List - list to sum</li>
+					<li>Sum - Variable that will be bound to the sum of all the elements in the list</li>
+				</ul>
+				<p class="code">
+?- sum([1,2,3,4,5],S).
+S = 15.
+				</p>
+			</div>
+			<div>
+				<h2 id="make_list" class="code">make_list(Length,Element,List)</h2>
+				<div>Return a list of a single element repeated a number of times.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>Length - number of times to repeat element</li>
+					<li>Element - element to be repeated</li>
+					<li>List - Variable that will be bound to the generated list</li>
+				</ul>
+				<p class="code">
+?- make_list(5,0,L).
+L = [0, 0, 0, 0, 0] .
+				</p>
+			</div>
+			<div>
+				<h2 id="add_first" class="code">add_first(X,L,List)</h2>
+				<div>Add an element to the beginning of a list.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>X - element to add</li>
+					<li>L - list to add to</li>
+					<li>List - Variable to be bound to the resulting list</li>
+				</ul>
+				<p class="code">
+?- add_first(1,[1,2,3,4,5],NL).
+NL = [1, 1, 2, 3, 4, 5].
+				</p>
+			</div>
+			<div>
+				<h2 id="add_list" class="code">add_last(X,L,List)</h2>
+				<div>Add an element to the end of a list.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>X - element to add</li>
+					<li>L - list to add to</li>
+					<li>List - Variable to be bound to the resulting list</li>
+				</ul>
+				<p class="code">
+?- add_last(1,[1,2,3,4,5],NL).
+NL = [1, 2, 3, 4, 5, 1] .
+				</p>
+			</div>
+			<div>
+				<h2 id="esrever" class="code">esrever(List,Reverse)</h2>
+				<div>Reverse a list.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>List - list to reverse</li>
+					<li>Reverse - Variable to be bound to the reverse of the list</li>
+				</ul>
+				<p class="code">
+?- esrever([1,2,3,4,5],R).
+R = [5, 4, 3, 2, 1] .
+				</p>
+			</div>
+			<div>
+				<h2 id="join_lists2" class="code">join_lists(List1,List2,Join)</h2>
+				<div>Joins two lists.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>List1 - list at the front</li>
+					<li>List2 - list at the back</li>
+					<li>Join - Variable to be bound to the list after joining</li>
+				</ul>
+				<p class="code">
+?- join_lists([1,2,3],[4,5,6],J).
+J = [1, 2, 3, 4, 5, 6].
+				</p>
+			</div>
+			<div>
+				<h2 id="join_lists3" class="code">join_lists(List1,List2,List3,Join)</h2>
+				<div>Joins three lists.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>List1 - list at the front</li>
+					<li>List2 - list in the middle</li>
+					<li>List3 - list at the back</li>
+					<li>Join - Variable to be bound to the list after joining</li>
+				</ul>
+				<p class="code">
+?- join_lists([1,2,3],[4,5,6],[7,8,9],J).
+J = [1, 2, 3, 4, 5, 6, 7, 8, 9].
+				</p>
+			</div>
+			<div>
+				<h2 id="join_lists4" class="code">join_lists(List1,List2,List3,List4,Join)</h2>
+				<div>Joins four lists.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>List1 - first list to be joined</li>
+					<li>List2 - second list to be joined</li>
+					<li>List3 - third list to be joined</li>
+					<li>List4 - fourth list to be joined</li>
+					<li>Join - Variable to be bound to the list after joining</li>
+				</ul>
+				<p class="code">
+?- join_lists([1,2],[3,4],[5,6],[7,8],J).
+J = [1, 2, 3, 4, 5, 6, 7, 8].
+				</p>
+			</div>
+			<div>
+				<h2 id="product" class="code">product(List,Product)</h2>
+				<div>Multiply all numbers in a list together.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>List - list to be multiplied</li>
+					<li>Product - Variable to be bound to the result of the multiplication</li>
+				</ul>
+				<p class="code">
+?- product([2,2,2,2],P).
+P = 16.
+				</p>
+			</div>
+			<div>
+				<h2 id="factorial" class="code">factorial(N,Nfactorial)</h2>
+				<div>Find the factorial of N.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>N - factorial to find</li>
+					<li>Nfactorial - Variable to be bound to the factorial of N</li>
+				</ul>
+				<p class="code">
+?- factorial(3,F).
+F = 6 .
+
+?- factorial(4,F).
+F = 24 .
+				</p>
+			</div>
+			<div>
+				<h2 id="make_set" class="code">make_set(List,Set)</h2>
+				<div>Make a list into a set by removing duplicates.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>List - list to make set from</li>
+					<li>Set - Variable to be bound to the set made by the list</li>
+				</ul>
+				<p class="code">
+?- make_set([1,2,2,4],T).
+T = [1, 2, 4] .
+				</p>
+			</div>
+			<div>
+				<h2 id="replace" class="code">replace(ListPosition,Object,List,Result)</h2>
+				<div>Replace an element at a given position in a list with another element.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>ListPosition - index of element to replace</li>
+					<li>Object - element to put in place of the replaced item</li>
+					<li>List - list to replace an item from</li>
+					<li>Result - Variable to be bound to the list after replacement</li>
+				</ul>
+				<p class="code">
+?- replace(4,foo,[a,b,c,d,e,f],R).
+R = [a, b, c, d, foo, f] .
+				</p>
+			</div>
+			<div>
+				<h2 id="remove" class="code">remove(Element,List,Result)</h2>
+				<div>Remove the first instance of a given element from a list.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>Element - element to remove from list</li>
+					<li>List - list to remove element from</li>
+					<li>Result - Variable to be bound to the list after removal</li>
+				</ul>
+				<p class="code">
+?- remove(四,[一,五,十,四,七,四],Remove).
+Remove = [一, 五, 十, 七, 四] .
+				</p>
+			</div>
+			<div>
+				<h2 id="take" class="code">take(List,Element,Rest)</h2>
+				<div>Remove a random element from a list.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>List - list to remove element from</li>
+					<li>Element - Variable to be bound to the element to remove from list</li>
+					<li>Rest - Variable to be bound to the list after removal</li>
+				</ul>
+				<p class="code">
+?- take([1,2,3,4,5],E,R).
+E = 4,
+R = [1, 2, 3, 5] .
+
+?- take([1,2,3,4,5],E,R).
+E = 3,
+R = [1, 2, 4, 5] .
+				</p>
+			</div>
+			<div>
+				<h2 id="split" class="code">split(PairList,FirstsList,SecondsList)</h2>
+				<div>Split a list of pairs into two lists where the first list contains the first element in each pair and the second list contains the second element in each pair.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>PairList - list of pairs to split</li>
+					<li>FirstsList - Variable to be bound to the list containing the first position pair elements</li>
+					<li>SecondsList - Variable to be bound to the list containing the second position pair elements</li>
+				</ul>
+				<p class="code">
+?- split([[one,一],[two,二],[three,三]],E,Ni本語).
+E = [one, two, three],
+Ni本語 = [一, 二, 三].
+				</p>
+			</div>
+			<div>
+				<h2 id="min_pair" class="code">min_pair(N1,N2,Min)</h2>
+				<div>Return the lesser of a pair of numbers.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>N1 - first number to compare</li>
+					<li>N2 - second number to compare</li>
+					<li>Min - Variable to be bound to the lessor of the pair</li>
+				</ul>
+				<p class="code">
+?- min_pair(2,4,Min).
+Min = 2 .
+
+?- min_pair(4,2,Min).
+Min = 2.
+				</p>
+			</div>
+			<div>
+				<h2 id="max_pair" class="code">max_pair(N1,N2,Max)</h2>
+				<div>Return the greater of a pair of numbers.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>N1 - first number to compare</li>
+					<li>N2 - second number to compare</li>
+					<li>Max - Variable to be bound to the greater of the pair</li>
+				</ul>
+				<p class="code">
+?- max_pair(2,4,Max).
+Max = 4.
+
+?- max_pair(4,2,Max).
+Max = 4 .
+				</p>
+			</div>
+			<div>
+				<h2 id="min" class="code">min(List,Min)</h2>
+				<div>Return the minimum number in a list.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>List - list to search</li>
+					<li>Min - Variable to be bound to the minimum of the list</li>
+				</ul>
+				<p class="code">
+?- min([4,3,4,1,5,8],Min).
+Min = 1 .
+				</p>
+			</div>
+			<div>
+				<h2 id="max" class="code">max(List,Max)</h2>
+				<div>Return the maximum number in a list.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>List - list to search</li>
+					<li>Max - Variable to be bound to the maximum of the list</li>
+				</ul>
+				<p class="code">
+?- max([4,3,4,1,5,8],Max).
+Max = 8 .
+				</p>
+			</div>
+			<div>
+				<h2 id="sort_inc" class="code">sort_inc(List,Result)</h2>
+				<div>Sort a list from least to greatest.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>List - list to sort</li>
+					<li>Result - Variable to be bound to the sorted list</li>
+				</ul>
+				<p class="code">
+?- sort_inc([8,2,14,5,3],Si).
+Si = [2, 3, 5, 8, 14].
+				</p>
+			</div>
+			<div>
+				<h2 id="sort_dec" class="code">sort_dec(List,Result)</h2>
+				<div>Sort a list from greatest to least.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>List - list to sort</li>
+					<li>Result - Variable to be bound to the sorted list</li>
+				</ul>
+				<p class="code">
+?- sort_dec([8,2,14,5,3],Sd).
+Sd = [14, 8, 5, 3, 2].
+				</p>
+			</div>
+			<div>
+				<h2 id="a_list" class="code">a_list(FirstList,SecondList,AssociationList)</h2>
+				<div>Create an association list from two lists of equal lengths, the first considered to be the keys, the second to be the values.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>FirstList - list that will used for the keys</li>
+					<li>SecondList - list that will used for the values</li>
+					<li>AssociationList - Variable to be bound to the resulting association list</li>
+				</ul>
+				<p class="code">
+?- a_list([いち,に,さん],[一,二,三], Pairs).
+Pairs = [pair(いち, 一), pair(に, 二), pair(さん, 三)] .
+				</p>
+			</div>
+			<div>
+				<h2 id="assoc" class="code">assoc(AList,Key,Value)</h2>
+				<div>Find the value in the second slot corresponding to Key in the first slot of some pair of the association list.</div>
+				<div>Arguments:</div>
+				<ul>
+					<li>AList - association list to search through</li>
+					<li>Key - key to search for</li>
+					<li>Value - Variable to be bound to the value corresponding to the given key</li>
+				</ul>
+				<p class="code">
+?- assoc([pair(いち, 一), pair(に, 二), pair(さん, 三)],に,C).
+C = 二 .
+				</p>
+			</div>
+		</section>
+	</body>
+</html>
