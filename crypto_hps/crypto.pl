@@ -206,5 +206,5 @@ demo(1) :-
 	solve_one.
 demo(N) :-
 	demo(1),
-	N is N-1,
-	demo(N).
+	M is N-1,
+	demo(M).
