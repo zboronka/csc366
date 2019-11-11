@@ -16,7 +16,7 @@
 % PLACING ITS SOLUTION IN THE KB.
 
 solve_problem_decompositionally :-
-	value_of(crypto_problem,problem(numbers(N1,N2,N3,N4,N5),goal(G))),
+	value_of(problem,problem(numbers(N1,N2,N3,N4,N5),goal(G))),
 	crypto(N1,N2,N3,N4,N5,G,Expression),
 	add_solution_to_KB(Expression).
 solve_problem_decompositionally :-
