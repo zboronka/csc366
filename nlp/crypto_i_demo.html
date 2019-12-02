@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../style.css">
+	</head>
+	<body>
+		<section>
+			<h1>
+				Crypto Interpreter Demo
+			</h1>
+			<p class="code">
+Welcome to SWI-Prolog (threaded, 64 bits, version 8.0.3)
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software.
+Please run ?- license. for legal details.
+
+For online help and background, visit http://www.swi-prolog.org
+For built-in help, use ?- help(Topic). or ?- apropos(Word).
+
+?- consult(crypto_i).
+true.
+
+?- parser.
+|: Use one and two and three and four and five to make zero.
+problem(numbers(1,2,3,4,5),goal(0))
+|: Use nine nine eight seven six to make one.
+Not a sentence ...
+|: Use nine nine eight seven and six to make one.
+problem(numbers(9,9,8,7,6),goal(1))
+|: Write five in terms of the odd numbers.
+problem(numbers(1,3,5,7,9),goal(5))
+|: Write zero in terms of the first five positive numbers.
+problem(numbers(1,2,3,4,5),goal(0))
+|: Can you make whatever from whatever?
+Not a sentence ...
+|: Use whatever to make whatever.
+problem(numbers(8,5,2,4,2),goal(6))
+|: Use whatever to make whatever.
+problem(numbers(0,3,0,3,4),goal(6))
+|: Can you make nine from numbers zero through four?
+problem(numbers(0,1,2,3,4),goal(9))
+|: Can you make fvie with numbers one through five?
+Not a sentence ...
+|: Can you make five with numbers one through five?
+problem(numbers(1,2,3,4,5),goal(5))
+|: Can you make zero with numbers five through nine?
+problem(numbers(5,6,7,8,9),goal(0))
+|: Use five zeros to make one.
+problem(numbers(0,0,0,0,0),goal(1))
+|: Use four fours and one one to make seven.
+problem(numbers(4,4,4,4,1),goal(7))
+|: Use one one and four fours to make seven.
+problem(numbers(1,4,4,4,4),goal(7))
+|: Cah you make zero from two fives and three fours?
+Not a sentence ...
+|: Can you make zero from two fives and three fours?
+problem(numbers(5,5,4,4,4),goal(0))
+|: Can you make zero from three fives and two fours?
+problem(numbers(5,5,5,4,4),goal(0))
+|: Can you make nine from two twos and one one and three threes?
+Not a sentence ...
+|: Can you make nine from two twos and one one and two threes?
+problem(numbers(2,2,1,3,3),goal(9))
+|: Can you make eight from one nine and two eights and two sevens?
+problem(numbers(9,8,8,7,7),goal(8))
+|: Can you make zero from two ones and two twos and one nine?
+problem(numbers(1,1,2,2,9),goal(0))
+|: ^C
+
+Action (h for help) ? abort
+% Execution Aborted
+|: Use one and two and three and four and five to make zero.
+Solution: ( ( 4 + 5 ) - ( ( 1 + 2 ) * 3 ) )
+|: Use one one two two and three to make nine.
+Solution: ( ( ( 1 + 1 ) + 2 ) + ( 3 + 2 ) )
+|: Use five zeros to make one.
+No solution to this problem.
+|: Write five in terms of the odd numbers.
+Solution: ( 9 - ( ( 5 + 7 ) / ( 1 * 3 ) ) )
+|: Write five in terms of the even numbers.
+Not a sentence ...
+|: Use whatever to make whatever.
+Solution: ( ( ( 3 + 4 ) + ( 7 - 4 ) ) / 2 )
+|: Use whatever to make whatever.
+Solution: ( 1 + ( ( 7 + 7 ) * ( 5 - 5 ) ) )
+|: Use whatever to make whatever.
+Solution: ( ( ( 6 + 1 ) - 7 ) * ( 5 + 6 ) )
+|: Can you make zero from three through seven?
+Not a sentence ...
+|: Can you make zero from numbers three through seven?
+Solution: ( ( 5 + 6 ) * ( ( 3 + 4 ) - 7 ) )
+|: Can you make zero with five nines?
+Solution: ( 9 * ( ( 9 + 9 ) - ( 9 + 9 ) ) )
+|: Can you make four with four fours and one one?
+Solution: ( ( 4 + 4 ) / ( ( 4 / 4 ) + 1 ) )
+|: Can you make four with one four and four ones?
+Solution: ( ( 1 + ( 4 + 1 ) ) - ( 1 + 1 ) )
+|: Can you make seven with two sixes and three eights?
+Solution: ( ( 8 + ( 6 - 6 ) ) - ( 8 / 8 ) )
+|: Can you make seven with three eights and two sixes?
+Solution: ( ( ( 8 + 8 ) - 8 ) - ( 6 / 6 ) )
+|: ^C
+
+Action (h for help) ? abort
+% Execution Aborted
+?- halt.
+
+			</p>
+		</section>
+	</body>
+</html>
